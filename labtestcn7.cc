@@ -98,3 +98,14 @@ main (int argc, char *argv[])
   Simulator::Destroy ();
   return 0;
 }
+
+
+/*At time 2s client sent 1024 bytes to 10.1.1.2 port 9
+At time 2s client sent 1024 bytes to 10.1.2.1 port 10
+At time 2.0022s server received 1024 bytes from 10.1.2.2 port 49153
+At time 2.0022s server sent 1024 bytes to 10.1.2.2 port 49153
+At time 2.00405s server received 1024 bytes from 10.1.1.1 port 49153
+At time 2.00405s server sent 1024 bytes to 10.1.1.1 port 49153
+At time 2.00441s client received 1024 bytes from 10.1.2.1 port 10
+At time 2.00811s client received 1024 bytes from 10.1.1.2 port 9
+*/
