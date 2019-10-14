@@ -1,20 +1,3 @@
-/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-/*
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation;
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
-
-
 //                          point to point
 //                  5mb / 2ms             7mb/1ms
 //                                  10.1.2.0
@@ -61,7 +44,7 @@ main (int argc, char *argv[])
   NetDeviceContainer devices,devices1,devices2;
   devices = pointToPoint.Install (nodes.Get(0),nodes.Get(1));
   devices1 = pointToPoint1.Install (nodes.Get(1),nodes.Get(2));
-  devices1 = pointToPoint2.Install (nodes.Get(1),nodes.Get(3));
+  devices2 = pointToPoint2.Install (nodes.Get(1),nodes.Get(3));
 
   InternetStackHelper stack;
   stack.Install (nodes);
@@ -73,7 +56,7 @@ main (int argc, char *argv[])
 
   Ipv4InterfaceContainer interfaces = address.Assign (devices);
   Ipv4InterfaceContainer interfaces1 = address1.Assign (devices1);
-  Ipv4InterfaceContainer interfaces2 = address1.Assign (devices2);
+  Ipv4InterfaceContainer interfaces2 = address2.Assign (devices2);
 
   UdpEchoServerHelper echoServer (9);
   UdpEchoServerHelper echoServer1 (10);
