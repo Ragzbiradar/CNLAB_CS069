@@ -118,6 +118,7 @@
   anim.SetConstantPosition (csmaNodes.Get (1), 15,12.5);
   anim.SetConstantPosition (csmaNodes.Get (2), 20,15);
  anim.SetConstantPosition (csmaNodes.Get (3), 25,17.5);
+ anim.EnablePacketMetadata(true);
  
    Simulator::Run ();
    Simulator::Destroy ();
